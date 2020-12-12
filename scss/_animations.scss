@@ -1,0 +1,89 @@
+.before_enter {
+  .anim {
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+    will-change: transform;
+  }
+  .fadeInUp {
+    transform: translateY(15px);
+  }
+  .fadeInDown {
+    transform: translateY(-15px);
+  }
+  .fadeInUpLarge {
+    transform: translateY(30px);
+  }
+  .fadeInDownLarge {
+    transform: translateY(-30px);
+  }
+  .fadeInLeft {
+    transform: translateX(15px);
+  }
+  .fadeInRight {
+    transform: translateX(-15px);
+  }
+  .zoomIn {
+    transform: scale3d(0.95,0.95,1);
+  }
+  .zoomOut {
+    transform: scale3d(1.1,1.1,1);
+  }
+  .slideAppear {
+    transform: translateX(40px);
+    transition: opacity .9s ease-out, transform .9s ease-out!important;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc( 100% + 1px );
+      height: 101%;
+      background: $bg-grey;
+      transform: scaleX(1);
+      transform-origin: right;
+      z-index: 2;
+      transition: all 0.9s ease-out 0.8s;
+    }
+  }
+  .scaleX {
+    transform: scaleX(0);
+  }
+}
+.has_transition {
+  .anim {
+    opacity: 1;
+  }
+  .fadeInUp,
+  .fadeInDown,
+  .fadeInUpLarge,
+  .fadeInDownLarge {
+    transform: translateY(0);
+  }
+  .fadeInLeft {
+    transform: translateX(0);
+  }
+  .fadeInRight {
+    transform: translateX(0px);
+  }
+  .zoomIn,
+  .zoomOut {
+    transform: scale3d(1,1,1);
+  }
+  .slideAppear {
+    transform: translateX(0)!important;
+    &::before {
+      transform: scaleX(0)
+    }
+  }
+  .scaleX {
+    transform: scaleX(1);
+  }
+}
+
+@for $i from 1 through 25 {
+  // $delay: #{$i} * 100;
+  .delay-#{$i * 100} {
+    transition-delay: #{$i * 100}ms!important;
+    transition-property: transform, opacity!important;
+  }
+}
