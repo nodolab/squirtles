@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap');
+@import 'overrides';
+@import 'animations';
+
+a {
+  text-decoration: none;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.section_1 {
+  padding-top: $header_height;
+}
+
+.full_h {
+  height: 100vh;
+}
+
+.bg_image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &--1 {
+    background-image: url('/img/home_1.jpg');
+  }
+  &.gradient_top {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 25%;
+      background: linear-gradient(to bottom, rgb(0,0,0,0.8) 15%, transparent);
+    }
+  }
+}
+
+.display_text {
+  font-size: 3rem;
+  font-weight: 900;
+  text-shadow: 1px 1px 12px rgba(0, 0, 0, 0.7);
+  &--white {
+    color: #FFF;
+  }
+}

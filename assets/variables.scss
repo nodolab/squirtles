@@ -2,3 +2,21 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+$body-font-family: 'Montserrat', sans-serif;
+/* Colors */
+$primary: #0C2340;
+$secondary: #002F6C;
+$grey: #8a8a8a;
+$text-color: #545852;
+$grey-color: #d2d2d2;
+$bg-grey: #F7F8FA;
+
+/* Media querys */
+$mobile: 'max-width: 600px';
+$tablet: 'min-width: 600px';
+$desktop: 'min-width: 960px';
+$lg: 'min-width: 1264px';
+$xlg: 'min-width: 1904px';
+
+/* Generales */
+$header_height: 7rem;
