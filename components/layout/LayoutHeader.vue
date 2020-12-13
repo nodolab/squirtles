@@ -42,7 +42,8 @@ nav {
   padding: 1.5em 0;
   a {
     padding: 0 1em;
-    color: #f2f2f2;;
+    color: #f2f2f2;
+    font-size: 1.2rem;
   }
   a:not(:last-child) {
     border-right: 2px solid #DDD;

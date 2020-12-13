@@ -11,7 +11,9 @@
         </v-col>
       </v-row>
     </section>
-    <section class="full_h"></section>
+    <section>
+      <HomeAbout/>
+    </section>
   </div>
 </template>
 

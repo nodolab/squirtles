@@ -12,12 +12,18 @@ export default {
 
 <style lang="scss" scoped>
 .btn_cta {
-  background: rgba(0,0,0,0.5);
+  $hover_color: lighten($primary, 5%);
+  background: rgba($secondary,0.9);
   color: #FFF;
   border: 2px solid #FFF;
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.5rem;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   letter-spacing: 4px;
+  transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  &:hover {
+    border-color: $hover_color;
+    color: $hover_color;
+  }
 }
 </style>
