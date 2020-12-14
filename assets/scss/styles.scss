@@ -10,6 +10,10 @@ section {
   padding-top: $header_height;
 }
 
+.page_wrapper > section:first-child {
+  padding-top: $header_height + 6rem;
+}
+
 .bg_image {
   background-position: center bottom;
   background-repeat: no-repeat;

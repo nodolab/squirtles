@@ -1,22 +1,30 @@
 <template>
   <header>
     <div class="logo_bar">
-      <img src="~assets/srtlogo.webp" alt="Squirtles Racing Team">
+      <nuxt-link to="/">
+        <img src="~assets/srtlogo.webp" alt="Squirtles Racing Team">
+      </nuxt-link>
     </div>
-    <nav>
-      <a href="#">NOSOTROS</a>
-      <a href="#">PROGRAMAS</a>
-      <a href="#">TESTIMONIOS</a>
-      <a href="#">COMUNIDAD</a>
-      <a href="#">PATROCINADORES</a>
-      <a href="#">CONTACTO</a>
+    <nav :class="{ 'light': lightMode }">
+      <Nuxt-link to="/nosotros">NOSOTROS</nuxt-link>
+      <Nuxt-link to="/programas">PROGRAMAS</nuxt-link>
+      <Nuxt-link to="/testimonio">TESTIMONIOS</nuxt-link>
+      <Nuxt-link to="/comunidad">COMUNIDAD</nuxt-link>
+      <Nuxt-link to="/patrocinadores">PATROCINADORES</nuxt-link>
+      <Nuxt-link to="/contacto">CONTACTO</nuxt-link>
     </nav>
   </header>
 </template>
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  props: {
+    lightMode: {
+      type: Boolean,
+      default: true
+    }
+  }
 }
 </script>
 
@@ -42,11 +50,16 @@ nav {
   padding: 1.5em 0;
   a {
     padding: 0 1em;
-    color: #f2f2f2;
+    color: #111;
     font-size: 1.2rem;
   }
   a:not(:last-child) {
     border-right: 2px solid #DDD;
+  }
+  &.light {
+    a {
+      color: #f2f2f2;
+    }
   }
 }
 </style>
