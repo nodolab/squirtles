@@ -14,6 +14,12 @@
     <section>
       <HomeAbout/>
     </section>
+    <section>
+      <HomeProgramas/>
+    </section>
+    <section>
+      <HomeTestimonios/>
+    </section>
   </div>
 </template>
 
