@@ -17,17 +17,18 @@ section {
   &--1 {
     background-image: url('/img/home01.jpg');
   }
-  &.gradient_top {
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 30%;
-      background: linear-gradient(to bottom, $secondary 20%, transparent);
-    }
+}
+
+.gradient_top {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(to bottom, $secondary 20%, transparent);
   }
 }
 

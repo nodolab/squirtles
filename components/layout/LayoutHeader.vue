@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="logo_bar">
-      <img src="~assets/srtlogo.png" alt="Squirtles Racing Team">
+      <img src="~assets/srtlogo.webp" alt="Squirtles Racing Team">
     </div>
     <nav>
       <a href="#">NOSOTROS</a>
