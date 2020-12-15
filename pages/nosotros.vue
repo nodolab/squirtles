@@ -7,7 +7,7 @@
           <h2 class="font-weight-medium text-center mb-12">Somos un equipo multidisciplinario de atletas de todas las edades y niveles principalmente en los deportes de: <br> Triatlón, Natación, Ciclismo y Carrera.</h2>
         </v-col>
       </v-row>
-      <v-row class="mb_space">
+      <v-row class="mb-12">
         <v-col cols="12" md="6" class="img_container">
           <img src="/img/srt01.jpg" alt="">
         </v-col>
@@ -36,7 +36,7 @@
     <section>
       <v-row justify="center">
         <v-col cols="10" md="10">
-          <h3 class="display-1 font-weight-medium text-center">Crecimiento del equipo</h3>
+          <h3 class="display-1 font-weight-medium text-center mb-12">Crecimiento del equipo</h3>
         </v-col>
       </v-row>
       <v-row>
@@ -68,6 +68,16 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.label_img_title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  // right: 0;
+  padding: 0.5rem 2rem;
+  background: $primary;
+  background: rgba($primary, 0.8);
+  color: #FFF;
+  text-align: center;
+}
 </style>

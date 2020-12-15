@@ -6,12 +6,12 @@ a {
   text-decoration: none;
 }
 
-section {
-  padding-top: $header_height;
-}
+// section {
+//   padding-top: $header_height;
+// }
 
 .page_wrapper > section:first-child {
-  padding-top: $header_height + 6rem;
+  padding-top: $header_height + 8rem;
 }
 
 .bg_image {
@@ -38,6 +38,15 @@ section {
 
 .lh-1 {
   line-height: 1.1;
+}
+
+.pt_section {
+  padding-top: 4rem;
+}
+
+.py_section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .mb_space {

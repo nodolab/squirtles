@@ -1,42 +1,47 @@
 <template>
   <v-container>
-    <v-row justify="center" class="mb-10">
-      <v-col cols="10" md="10">
-        <h2 class="section_title text-center mb-12">[PROGRAMAS]</h2>
-        <h2 class="display-2 font-weight-medium text-center mb-12 lh_c">
+    <v-row>
+      <v-col cols="12">
+        <!-- <h2 class="section_title text-center mb-12">[PROGRAMAS]</h2> -->
+        <h2 class="display-2 font-weight-medium text-center lh_c">
           Promoción de entrenamientos <br>
           <small class="subtitle">TEMPORADA 2020</small>
         </h2>
       </v-col>
-      <v-col cols="6">
+    </v-row>
+    <v-row justify="center" class="my-12">
+      <v-col cols="4">
         <UiPackage
           price="$6,000*"
         >
           POR UN AÑO DE <br> ENTRENAMIENTO TRIATLÓN
         </UiPackage>
       </v-col>
-      <v-col cols="6">
+      <v-col cols="4" offset="1">
         <UiPackage
           price="$4,000*"
         >
           POR UN AÑO DE ENTRENAMIENTO <br> EN DISCIPLINA INDIVIDUAL
         </UiPackage>
       </v-col>
-      <v-col cols="12">
-        <h2 class="brand__text text-center font-weight-medium mt-12 lh">
-          Incluye tu cuenta en plataforma Trainning Peaks <br>
-          <strong>*Pago único</strong>
-        </h2>
+      <v-col v-if="button" cols="12" class="text-center pt-12">
+        <v-btn
+          color="indigo darken-3"
+          tile
+          dark
+          x-large
+          to="/programas"
+        >
+          Ver paquetes
+        </v-btn>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="12">
-        <h2 class="display-1 font-weight-medium text-center mb-4">
-          Costos y paquetes de nuestros servicios
-        </h2>
-      </v-col>
-      <v-col cols="12">
-        <UiPackageTable/>
+        <h4 class="text-center font-weight-medium lh">
+          Incluye tu cuenta en plataforma Trainning Peaks <br>
+          <strong class="brand__text">*Pago único</strong>
+        </h4>
       </v-col>
     </v-row>
   </v-container>
@@ -44,7 +49,13 @@
 
 <script>
 export default {
-  name: 'HomeProgramas'
+  name: 'HomeProgramas',
+  props: {
+    button: {
+      type: Boolean,
+      default: true
+    }
+  }
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header :class="{ 'elevation-1': !lightMode }">
     <div class="logo_bar">
       <nuxt-link to="/">
         <img src="~assets/srtlogo.webp" alt="Squirtles Racing Team">
@@ -8,7 +8,7 @@
     <nav :class="{ 'light': lightMode }">
       <Nuxt-link to="/nosotros">NOSOTROS</nuxt-link>
       <Nuxt-link to="/programas">PROGRAMAS</nuxt-link>
-      <Nuxt-link to="/testimonio">TESTIMONIOS</nuxt-link>
+      <Nuxt-link to="/testimonios">TESTIMONIOS</nuxt-link>
       <Nuxt-link to="/comunidad">COMUNIDAD</nuxt-link>
       <Nuxt-link to="/patrocinadores">PATROCINADORES</nuxt-link>
       <Nuxt-link to="/contacto">CONTACTO</nuxt-link>
@@ -39,6 +39,7 @@ header {
 .logo_bar {
   height: $header_height;
   text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   img {
     height: 100%;
   }

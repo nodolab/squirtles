@@ -14,23 +14,13 @@
         </v-col>
       </v-row>
     </section>
-    <!-- <section class="full_h">
-      <h2>slider</h2>
-      <div v-swiper:homeSlider="options">
-        <div class="swiper-wrapper">
-          <div v-for="i in 4" :key="i" class="swiper-slide">
-            <img src="/img/about01.jpg" alt="">
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <section>
+    <section class="py_section">
       <HomeAbout/>
     </section>
-    <section>
+    <section class="grey lighten-5 py_section">
       <HomeProgramas/>
     </section>
-    <section>
+    <section class="py_section">
       <HomeTestimonios/>
     </section>
   </div>
@@ -57,5 +47,8 @@ export default {
   width: 100%;
   height: 100%;
   z-index: 0;
+}
+.section_1 {
+  padding-top: $header_height;
 }
 </style>

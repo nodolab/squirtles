@@ -1,9 +1,10 @@
 <template>
   <v-app>
-    <LayoutHeader :lightMode="headerLightMode"/>
+    <LayoutHeader :light-mode="headerLightMode"/>
     <v-main>
       <nuxt />
     </v-main>
+    <LayoutFooter/>
   </v-app>
 </template>
 
@@ -17,7 +18,6 @@ export default {
   },
   watch: {
     $route (to, from) {
-      console.log(to, from)
       this.changeHeaderMode(to.name)
     }
   },
