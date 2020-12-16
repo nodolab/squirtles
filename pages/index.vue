@@ -23,6 +23,17 @@
     <section class="py_section">
       <HomeTestimonios/>
     </section>
+    <v-row justify="center">
+      <v-col cols="10" md="6">
+        <v-divider></v-divider>
+      </v-col>
+    </v-row>
+    <section class="py_section">
+      <HomeComunidad/>
+    </section>
+    <section class="py_section bg_image bg_image--2">
+      <HomePatrocinadores/>
+    </section>
   </div>
 </template>
 

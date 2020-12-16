@@ -1,20 +1,20 @@
 <template>
   <v-container>
     <v-row justify="center" align="center">
-      <v-col cols="4" class="img_container">
+      <!-- <v-col cols="4" class="img_container">
         <img src="/img/winner.svg" alt="">
-      </v-col>
-      <v-col cols="12" sm="6" offset-sm="1">
+      </v-col> -->
+      <v-col cols="12" sm="8" class="text-center">
         <!-- <h2 class="section_title text-center mb-12">[NOSOTROS]</h2> -->
         <h1 class="section_title mb-8 ">[SQUIRTLES RACING TEAM]</h1>
-        <h3 class="font-weight-regular">
+        <h3 class="font-weight-regular mb-12">
           <i>
             "Somos un equipo multidisciplinario de atletas de todas las edades y niveles principalmente en los deportes de: <br> Triatlón, Natación, Ciclismo y Carrera."
           </i>
         </h3>
       </v-col>
     </v-row>
-    <!-- <v-row class="mb_space">
+    <v-row class="mb_space">
       <v-col cols="12" md="6" class="img_container">
         <img src="/img/srt01.jpg" alt="">
       </v-col>
@@ -62,7 +62,7 @@
           Cuenta con participación de atletas juveniles en la olimpiada nacional, atletas en categoría élite, el equipo ofrece programas de entrenamientos para todos las edades y niveles en una gran variedad de pruebas y distancias; desde MTB a maratones como triatlones sprint y Ironman
         </p>
       </v-col>
-    </v-row> -->
+    </v-row>
   </v-container>
 </template>
 

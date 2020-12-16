@@ -1,7 +1,7 @@
 <template>
-  <div class="card text-center py-12 px-4 elevation-1 h-100">
+  <div class="card text-center elevation-1 py-12 px-4 h-100">
     <h1 class="price mb-3">{{ price }}</h1>
-    <h4 class="mb-2 caption">
+    <h4 class="mb-2">
       <slot></slot>
     </h4>
   </div>

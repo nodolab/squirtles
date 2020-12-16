@@ -2,13 +2,13 @@
 @import 'overrides';
 @import 'animations';
 
+body, html {
+  scroll-behavior: smooth;
+}
+
 a {
   text-decoration: none;
 }
-
-// section {
-//   padding-top: $header_height;
-// }
 
 .page_wrapper > section:first-child {
   padding-top: $header_height + 8rem;
@@ -20,6 +20,9 @@ a {
   background-size: cover;
   &--1 {
     background-image: url('/img/home01.jpg');
+  }
+  &--2 {
+    background-image: url('~assets/bg_sponsor.jpg');
   }
 }
 
