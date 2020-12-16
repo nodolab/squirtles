@@ -9,9 +9,9 @@
       <Nuxt-link to="/nosotros">NOSOTROS</nuxt-link>
       <Nuxt-link to="/programas">PROGRAMAS</nuxt-link>
       <Nuxt-link to="/testimonios">TESTIMONIOS</nuxt-link>
-      <Nuxt-link to="/comunidad">COMUNIDAD</nuxt-link>
-      <Nuxt-link to="/patrocinadores">PATROCINADORES</nuxt-link>
-      <Nuxt-link to="/contacto">CONTACTO</nuxt-link>
+      <Nuxt-link to="/">COMUNIDAD</nuxt-link>
+      <Nuxt-link to="/">PATROCINADORES</nuxt-link>
+      <Nuxt-link to="/">CONTACTO</nuxt-link>
     </nav>
   </header>
 </template>

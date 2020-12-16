@@ -2,11 +2,12 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
-// $body-font-family: 'Montserrat', sans-serif;
+// No sobrescribir variables de vuetify porque no genera static files
+
 /* Colors */
 $primary: #7bdb8e;
 $secondary: #1C1F41;
-$grey: #8a8a8a;
+// $grey: #8a8a8a;
 $text-color: #454647;
 $grey-color: #d2d2d2;
 $bg-grey: #F7F8FA;
