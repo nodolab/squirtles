@@ -14,13 +14,13 @@
         </v-col>
       </v-row>
     </section>
-    <section class="py_section">
+    <section id="nosotros" class="py_section">
       <HomeAbout/>
     </section>
-    <section class="grey lighten-5 py_section">
+    <section id="programas" class="grey lighten-5 py_section">
       <HomeProgramas/>
     </section>
-    <section class="py_section">
+    <section id="testimonios" class="py_section">
       <HomeTestimonios/>
     </section>
     <v-row justify="center">
@@ -28,10 +28,10 @@
         <v-divider></v-divider>
       </v-col>
     </v-row>
-    <section class="py_section">
+    <section id="comunidad" class="py_section">
       <HomeComunidad/>
     </section>
-    <section class="py_section bg_image bg_image--2">
+    <section id="patrocinadores" class="py_section bg_image bg_image--2">
       <HomePatrocinadores/>
     </section>
   </div>

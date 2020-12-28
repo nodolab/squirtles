@@ -1,18 +1,20 @@
 <template>
-  <header :class="{ 'elevation-1': !lightMode }">
-    <div class="logo_bar">
-      <nuxt-link to="/">
-        <img src="~assets/srtlogo.webp" alt="Squirtles Racing Team">
-      </nuxt-link>
-    </div>
-    <nav :class="{ 'light': lightMode }">
-      <Nuxt-link to="/">NOSOTROS</nuxt-link>
-      <Nuxt-link to="/">PROGRAMAS</nuxt-link>
-      <Nuxt-link to="/">TESTIMONIOS</nuxt-link>
-      <Nuxt-link to="/">COMUNIDAD</nuxt-link>
-      <Nuxt-link to="/">PATROCINADORES</nuxt-link>
-      <Nuxt-link to="/">CONTACTO</nuxt-link>
-    </nav>
+  <div class="menu">
+    <header :class="{ 'fixed_nav elevation-1': fixedNav }">
+      <div class="logo_bar">
+        <nuxt-link to="/">
+          <img src="~assets/srtlogo.webp" alt="Squirtles Racing Team">
+        </nuxt-link>
+      </div>
+      <nav :class="{ 'light': lightMode }">
+        <nuxt-link to="/">INICIO</nuxt-link>
+        <nuxt-link to="#nosotros">NOSOTROS</nuxt-link>
+        <nuxt-link to="#programas">PROGRAMAS</nuxt-link>
+        <nuxt-link to="#testimonios">TESTIMONIOS</nuxt-link>
+        <nuxt-link to="#comunidad">COMUNIDAD</nuxt-link>
+        <nuxt-link to="#patrocinadores">PATROCINADORES</nuxt-link>
+      </nav>
+    </header>
     <v-btn
       small
       fab
@@ -25,13 +27,17 @@
     >
       <v-icon>mdi-chevron-up</v-icon>
     </v-btn>
-  </header>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'Header',
   props: {
+    /**
+     * Para cambiar fondo por defecto al usar navegacion por secciones
+     * Valor cambia en layouts/default.vue
+     */
     lightMode: {
       type: Boolean,
       default: true
@@ -39,7 +45,8 @@ export default {
   },
   data () {
     return {
-      showBtn: false
+      showBtn: false,
+      fixedNav: false
     }
   },
   beforeMount () {
@@ -47,18 +54,54 @@ export default {
   },
   methods: {
     handleScroll () {
-      // this.fixedNav = window.scrollY > 100 || false
+      this.fixedNav = window.scrollY > 100 || false
       this.showBtn = window.scrollY > window.innerHeight / 2 || false
     },
     goTop () {
       window.scroll({ top: 0 })
-      // if (this.$route.name === 'Home') this.$router.replace('/').catch(err => err)
+      console.log(this.$route.name)
+      if (this.$route.name === 'index') {
+        this.$router.replace('/').catch(err => err)
+      }
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  z-index: 10;
+  .fixed_nav {
+    position: fixed;
+    left: 0;
+    // padding-top: 1rem;
+    // padding-bottom: 1rem;
+    background: #FFF;
+    transform: translateY(-100%);
+    animation: menu .3s linear 0.3s forwards;
+    .logo_bar {
+      display: none;
+    }
+    nav {
+      padding: 1rem 0;
+      will-change: padding;
+      transition: padding 0.7s ease-in-out 0.6s;
+    }
+    a {
+      color: #111;
+    }
+  }
+}
+@keyframes menu {
+  to {
+    transform: translateY(0);
+  }
+}
 header {
   position: absolute;
   top: 0;
