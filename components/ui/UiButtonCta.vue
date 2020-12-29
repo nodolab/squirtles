@@ -1,5 +1,5 @@
 <template>
-  <button class="btn_cta">
+  <button class="btn_cta" @click="$router.push('#patrocinadores')">
     ¡ÚNETE!
   </button>
 </template>

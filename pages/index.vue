@@ -23,16 +23,20 @@
     <section id="testimonios" class="py_section">
       <HomeTestimonios/>
     </section>
-    <v-row justify="center">
-      <v-col cols="10" md="6">
-        <v-divider></v-divider>
-      </v-col>
-    </v-row>
-    <section id="comunidad" class="py_section">
+    <section id="comunidad" class="pt_section bg_dark white--text">
       <HomeComunidad/>
     </section>
-    <section id="patrocinadores" class="py_section bg_image bg_image--2">
+    <section id="patrocinadores" class="py_section bg_gradient">
+      <div class="bg_patrocinadores">
+        <img src="~assets/promobg_top.webp" alt="" class="fig fig--top fig--label">
+        <img src="~assets/promobg_bottom.webp" alt="" class="fig fig--bottom fig--label">
+        <img src="~assets/shirt_back.webp" alt="" class="fig fig--left fig--shirt">
+        <img src="~assets/shirt_front.webp" alt="" class="fig fig--right fig--shirt">
+      </div>
       <HomePatrocinadores/>
+    </section>
+    <section class="pb_section">
+      <HomeSocialFeed/>
     </section>
   </div>
 </template>

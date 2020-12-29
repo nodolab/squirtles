@@ -25,10 +25,9 @@ export default {
         }
       },
       images: [
-        '/img/home01.jpg',
-        '/img/home_1.jpg',
-        '/img/atletismo01.jpg',
-        '/img/natacion01.jpg'
+        '/img/squirtles01.webp',
+        '/img/squirtles02.webp',
+        '/img/squirtles03.webp'
       ]
     }
   }

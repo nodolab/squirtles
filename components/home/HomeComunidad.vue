@@ -1,44 +1,150 @@
 <template>
-  <v-container>
-    <h2 class="section_title text-center mb-10">[COMUNIDAD]</h2>
-    <v-row justify="center">
-      <v-col cols="10">
-        <div class="video mb-12">
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qJomEg_BYVA?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <!-- <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FNodoLabMarketing%2Fvideos%2F300836914263683%2F&show_text=false&width=560" width="100%" height="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> -->
+  <div>
+    <h2 class="section_title text-center mb-6 mt-4">[COMUNIDAD]</h2>
+    <h2 class="display-1 font-weight-regular text-center mb-8">
+      ¡Síguenos en nuestras redes sociales!
+    </h2>
+    <div class="gallery mb-6">
+      <div
+        v-for="(img, i) in gallery"
+        :key="i"
+        class="gallery__item"
+      >
+        <img :src="img" alt="" @click="dialog = true; imgSrc = img">
+        <div class="overlay">
+          <v-icon color="#f2f2f2" class="icon">mdi-arrow-expand</v-icon>
         </div>
-      </v-col>
-      <v-col cols="12">
-        <h2 class="display-1 font-weight-medium text-center mb-12">
-          ¡Síguenos en nuestras redes sociales!
-        </h2>
-        <UiSocial large center/>
-      </v-col>
-    </v-row>
-  </v-container>
+      </div>
+    </div>
+    <v-container>
+      <v-row justify="center">
+        <v-col cols="12">
+          <UiSocial large center/>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-dialog
+      v-model="dialog"
+      fullscreen
+      transition="fade-transition"
+    >
+      <div class="overlay_content py-8" @click="dialog = false">
+        <img :src="imgSrc" alt="" class="img_gallery" @click.stop="">
+      </div>
+    </v-dialog>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Comunidad'
+  name: 'Comunidad',
+  data () {
+    return {
+      dialog: false,
+      imgSrc: '',
+      gallery: [
+        '/img/testimonio01.jpg',
+        '/img/squirtles03.webp',
+        '/img/srtpao.jpg',
+        '/img/about01.jpg',
+        '/img/srt01.jpg'
+      ]
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.video {
-  position: relative;
-  &:before {
-    width: 100%;
-    display: block;
-    content: "";
-    width: 100%;
-    padding-top: 56.25%;
-  }
-  > iframe {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    // width: calc(100% - 30px);
+.gallery {
+  // border: 1px solid #FFF;
+  width: 100%;
+  // height: 600px;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 300px);
+  &__item {
+    position: relative;
+    cursor: pointer;
+    // transition: transform 0.2s ease-out;
+    &:nth-child(2) {
+      // background: yellow;
+      grid-column-start: 2;
+      grid-column-end: span 2; // span le dice que tome 2 columns
+    }
+    &:nth-child(3) {
+      // background: green;
+      grid-row-end: span 2;
+    }
+    &:nth-child(4) {
+      // background: blue;
+      grid-column-start: 1;
+      grid-column-end: span 2;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0, 0.4);
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+      pointer-events: none;
+      .icon {
+        opacity: 0;
+        transform: scale3d(1.2, 1.2, 1);
+        transition: all 0.2s ease-out 0.3s;
+      }
+    }
+    &:hover {
+      // transform: scale3d(1.04,1.04,1);
+      // z-index: 1;
+      .overlay {
+        opacity: 1;
+        .icon {
+          opacity: 1;
+          transform: scale3d(1,1,1);
+        }
+      }
+    }
   }
 }
+.overlay_content {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  img {
+    display: block;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+// .video {
+//   position: relative;
+//   &:before {
+//     width: 100%;
+//     display: block;
+//     content: "";
+//     width: 100%;
+//     padding-top: 56.25%;
+//   }
+//   > iframe {
+//     position: absolute;
+//     top: 15px;
+//     left: 15px;
+//     // width: calc(100% - 30px);
+//   }
+// }
 </style>
