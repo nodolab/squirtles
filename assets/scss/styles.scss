@@ -6,6 +6,10 @@ body, html {
   scroll-behavior: smooth;
 }
 
+main {
+  overflow-x: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -35,42 +39,7 @@ section {
 }
 
 .bg_dark {
-  background: #14333A;
-}
-
-.bg_patrocinadores {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  .fig {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    &--label {
-      z-index: 1;
-      opacity: 0.7;
-    }
-    &--shirt {
-      height: 100%;
-      width: auto;
-      opacity: 0.15;
-    }
-    &--top {
-      top: 0;
-    }
-    &--bottom {
-      bottom: 0;
-    }
-    &--left {
-      left: -25%;
-    }
-    &--right {
-      left: auto;
-      right: -25%;
-    }
-  }
+  background: $secondary;
 }
 
 .gradient_top {
