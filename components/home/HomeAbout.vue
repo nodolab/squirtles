@@ -16,7 +16,7 @@
     </v-row>
     <v-row class="mb_space">
       <v-col cols="12" md="6" class="img_container">
-        <img src="/img/srt01.jpg" alt="">
+        <img src="/img/alfonso_coach.webp" alt="">
       </v-col>
       <v-col cols="12" md="6" class="img_container">
         <p>
@@ -47,7 +47,7 @@
     <v-row>
       <v-col cols="12">
         <div class="img_container w-100 relative">
-          <img src="/img/about01.jpg" alt="">
+          <img src="/img/squirtlesteam.webp" alt="">
           <p class="label_img_title w-100 mb-0">
             <strong>Squirtles Racing Team</strong>,
             <small>COMPETENCIA NACIONAL DE TRIATLÓN, IXTAPA, GRO. MAYO 2019</small>

@@ -8,7 +8,7 @@
         <path d="m55,237 74-228 74,228L9,96h240"/>
       </svg>
     </div>
-    <h2 class="name mb-0">
+    <h2 class="name mb-2">
       {{ name }}
     </h2>
     <div class="dicipline mb-4">
@@ -57,6 +57,7 @@ export default {
   font-weight: 900;
   letter-spacing: 1px;
   font-size: 2rem;
+  line-height: 1;
 }
 .icon {
   fill: #B2DF6D;

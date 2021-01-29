@@ -43,11 +43,15 @@ export default {
       dialog: false,
       imgSrc: '',
       gallery: [
-        '/img/testimonio01.jpg',
-        '/img/squirtles03.webp',
-        '/img/srtpao.jpg',
-        '/img/about01.jpg',
-        '/img/srt01.jpg'
+        '/img/galeria/GALERIA01.webp',
+        '/img/galeria/GALERIA02.webp',
+        '/img/galeria/GALERIA03.webp',
+        '/img/galeria/GALERIA04.webp',
+        '/img/galeria/GALERIA05.webp',
+        '/img/galeria/GALERIA06.webp',
+        '/img/galeria/GALERIA07.webp',
+        '/img/galeria/GALERIA08.webp',
+        '/img/galeria/GALERIA09.webp'
       ]
     }
   }

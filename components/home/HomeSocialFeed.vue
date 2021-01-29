@@ -10,7 +10,7 @@
         v-for="(img, i) in images"
         :key="i"
       >
-        <div class="img_container feed_item">
+        <div class="img_container feed_item img_container">
           <img :src="img" alt="">
         </div>
       </v-col>
@@ -24,8 +24,9 @@ export default {
   data () {
     return {
       images: [
-        '/img/testimonio02.jpg',
-        '/img/testimonio03.jpg',
+        '/img/unete01.webp',
+        '/img/unete02.webp',
+        '/img/unete03.webp',
         '/img/social01.jpg',
         '/img/social02.jpg',
         '/img/social03.jpg'
@@ -37,6 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 .feed_item {
+  height: 180px;
   border-radius: 8px;
   box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.6);
   overflow: hidden;
