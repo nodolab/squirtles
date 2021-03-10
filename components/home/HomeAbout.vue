@@ -46,7 +46,7 @@
     </v-row>
     <v-row>
       <v-col cols="12">
-        <div class="img_container w-100 relative">
+        <div class="img_container w-100 relative mb-12 mb-sm-0">
           <img src="/img/squirtlesteam.webp" alt="">
           <p class="label_img_title w-100 mb-0">
             <strong>Squirtles Racing Team</strong>,
@@ -75,14 +75,20 @@ export default {
 <style lang="scss" scoped>
 .label_img_title {
   position: absolute;
-  bottom: 0;
+  // bottom: 0;
   left: 0;
   // right: 0;
+  line-height: 1.1;
+  top: 100%;
   padding: 0.5rem 2rem;
   background: $primary;
   background: rgba($primary, 0.8);
   color: #FFF;
   text-align: center;
+  @media screen and ($tablet) {
+    bottom: 0;
+    top: auto;
+  }
 }
 .about_title {
   letter-spacing: 3px;

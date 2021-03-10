@@ -95,11 +95,18 @@ section {
 }
 
 .display_text {
-  font-size: 2.5rem;
+  text-align: center;
+  font-size: 1.5rem;
   font-weight: 900;
   text-shadow: 1px 1px 12px rgba(0, 0, 0, 0.7);
   &--white {
     color: #FFF;
+  }
+  @media screen and ($tablet) {
+    font-size: 2rem;
+  }
+  @media screen and ($desktop) {
+    font-size: 2.5rem;
   }
 }
 
@@ -122,4 +129,11 @@ section {
 
 .section_title {
   letter-spacing: 4px;
+  font-size: 1em;
+  @media screen and ($tablet) {
+    font-size: 1.5rem;
+  }
+  @media screen and ($desktop) {
+    font-size: 2rem;
+  }
 }

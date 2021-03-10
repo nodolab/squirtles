@@ -60,30 +60,38 @@ export default {
 
 <style lang="scss" scoped>
 .gallery {
-  // border: 1px solid #FFF;
   width: 100%;
-  // height: 600px;
   display: grid;
   gap: 0.5rem;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 300px);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 300px);
+  @media screen and ($tablet) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 300px);
+  }
+  @media screen and ($desktop) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 300px);
+  }
   &__item {
     position: relative;
     cursor: pointer;
-    // transition: transform 0.2s ease-out;
-    &:nth-child(2) {
-      // background: yellow;
-      grid-column-start: 2;
-      grid-column-end: span 2; // span le dice que tome 2 columns
+    &:last-child {
+      grid-column: span 2;
+      @media screen and ($tablet) {
+        grid-column: span 1;
+      }
     }
-    &:nth-child(3) {
-      // background: green;
-      grid-row-end: span 2;
-    }
-    &:nth-child(4) {
-      // background: blue;
-      grid-column-start: 1;
-      grid-column-end: span 2;
+    @media screen and ($desktop) {
+      &:nth-child(2) {
+        grid-column: 2 / span 2; // span le dice que tome 2 columns
+      }
+      &:nth-child(3) {
+        grid-row-end: span 2;
+      }
+      &:nth-child(4) {
+        grid-column: 1 / span 2;
+      }
     }
     img {
       display: block;

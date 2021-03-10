@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="section_1 full_h">
+    <section class="section_1">
       <v-row class="h-100 relative">
         <div class="slider_wrapper">
           <SliderHome/>
@@ -74,7 +74,12 @@ export default {
   z-index: 0;
 }
 .section_1 {
-  padding-top: $header_height;
+  padding-top: 60px;
+  height: 450px;
+  @media screen and ($desktop) {
+    padding-top: $header_height;
+    height: 100vh;
+  }
 }
 .bg_patrocinadores {
   position: absolute;

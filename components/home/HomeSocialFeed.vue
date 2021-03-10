@@ -5,10 +5,13 @@
         <h1 class="section_title text-center mb-6 mt-8">[ÚNETE AL EQUIPO]</h1>
       </v-col>
     </v-row>
-    <v-row>
+    <v-row justify="center">
       <v-col
         v-for="(img, i) in images"
         :key="i"
+        cols="6"
+        sm="4"
+        md="2"
       >
         <div class="img_container feed_item img_container">
           <img :src="img" alt="">
@@ -24,12 +27,12 @@ export default {
   data () {
     return {
       images: [
-        '/img/unete01.webp',
+        '/img/social01.webp',
         '/img/unete02.webp',
         '/img/unete03.webp',
-        '/img/social01.jpg',
-        '/img/social02.jpg',
-        '/img/social03.jpg'
+        // '/img/social01.jpg',
+        '/img/social02.webp',
+        '/img/social03.webp'
       ]
     }
   }

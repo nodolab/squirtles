@@ -1,19 +1,24 @@
 <template>
   <div class="menu">
     <header :class="{ 'fixed_nav elevation-1': fixedNav }">
-      <div class="logo_bar">
+      <div class="logo__bar d-none d-md-block">
         <nuxt-link to="/">
           <img src="~assets/srtlogo.webp" alt="Squirtles Racing Team">
         </nuxt-link>
       </div>
-      <nav :class="{ 'light': lightMode }">
-        <nuxt-link to="/">INICIO</nuxt-link>
-        <nuxt-link to="#nosotros">NOSOTROS</nuxt-link>
-        <nuxt-link to="#programas">PROGRAMAS</nuxt-link>
-        <nuxt-link to="#testimonios">TESTIMONIOS</nuxt-link>
-        <nuxt-link to="#comunidad">COMUNIDAD</nuxt-link>
-        <nuxt-link to="#patrocinadores">PATROCINADORES</nuxt-link>
+      <nav class="d-none d-md-flex" :class="{ 'light': lightMode }">
+        <nuxt-link
+          v-for="({ to, text }) in items"
+          :key="text"
+          :to="to"
+        >
+          {{ text }}
+        </nuxt-link>
       </nav>
+      <div class="d-flex d-md-none mobile_bar elevation-1">
+        <img src="~assets/srtlogo.webp" alt="" class="mobile_bar__logo">
+        <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+      </div>
     </header>
     <v-btn
       small
@@ -27,6 +32,34 @@
     >
       <v-icon>mdi-chevron-up</v-icon>
     </v-btn>
+    <v-navigation-drawer
+      v-model="drawer"
+      temporary
+      fixed
+      width="300"
+      overlay-opacity="0.8"
+    >
+      <template v-slot:prepend>
+        <div class="logo__drawer">
+          <img src="~assets/srtlogo.webp" alt="">
+        </div>
+      </template>
+      <v-list dense class="mt-12">
+        <v-list-item
+          v-for="({ to, text }) in items"
+          :key="text"
+          link
+          @click="$router.push(to)"
+        >
+          <v-list-item-content class="text-center">
+            <v-list-item-title>{{ text }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+      <template v-slot:append>
+        <UiWhatsappButton block tile/>
+      </template>
+    </v-navigation-drawer>
   </div>
 </template>
 
@@ -46,7 +79,34 @@ export default {
   data () {
     return {
       showBtn: false,
-      fixedNav: false
+      fixedNav: false,
+      drawer: false,
+      items: [
+        // {
+        //   to: '/',
+        //   text: 'INICIO'
+        // },
+        {
+          to: '#nosotros',
+          text: 'NOSOTROS'
+        },
+        {
+          to: '#programas',
+          text: 'PROGRAMAS'
+        },
+        {
+          to: '#testimonios',
+          text: 'TESTIMONIOS'
+        },
+        {
+          to: '#comunidad',
+          text: 'COMUNIDAD'
+        },
+        {
+          to: '#patrocinadores',
+          text: 'PATROCINADORES'
+        }
+      ]
     }
   },
   beforeMount () {
@@ -84,8 +144,8 @@ export default {
     background: #FFF;
     transform: translateY(-100%);
     animation: menu .3s linear 0.3s forwards;
-    .logo_bar {
-      display: none;
+    .logo__bar {
+      display: none!important;
     }
     nav {
       padding: 1rem 0;
@@ -107,14 +167,26 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 7;
 }
-.logo_bar {
-  height: $header_height;
-  text-align: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  img {
-    height: 100%;
+.logo {
+  &__bar {
+    height: $header_height;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    img {
+      height: 100%;
+    }
+  }
+  &__drawer {
+    width: 130px;
+    margin: 2em auto 0;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
 }
 nav {
@@ -146,4 +218,19 @@ nav {
     opacity: 1;
   }
 }
+.mobile_bar {
+  width: 100%;
+  // display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2em 1.3em;
+  &__logo {
+    width: 65px;
+  }
+}
+// @media screen and ($mobile) {
+//   .logo_bar {
+//     display: none;
+//   }
+// }
 </style>

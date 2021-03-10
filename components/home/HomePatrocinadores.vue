@@ -8,20 +8,7 @@
         </h2>
       </v-col>
       <v-col cols="10" md="7" class="text-center">
-        <!-- <h3 class="text-center font-weight-regular mb-4">Registrate para enviarte más información</h3> -->
-        <!-- <NewsletterForm/> -->
-        <v-btn
-          x-large
-          outlined
-          color="#7bdb8e"
-          height="60"
-          class="whatsapp_button"
-        >
-          <v-icon large class="mr-3">mdi-whatsapp</v-icon>
-          <span class="white--text">
-            Envianos WhatsApp
-          </span>
-        </v-btn>
+        <UiWhatsappButton outlined/>
       </v-col>
     </v-row>
     <div class="brands">
@@ -65,9 +52,5 @@ export default {
   &--3 {
     width: 320px;
   }
-}
-.whatsapp_button {
-  text-transform: none;
-  border-radius: 15px;
 }
 </style>

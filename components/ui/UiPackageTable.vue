@@ -25,80 +25,10 @@
 <script>
 export default {
   name: 'PackageTable',
-  data () {
-    return {
-      items: [
-        {
-          concepto: 'Inscripción anual al equipo',
-          descripcion: 'Cuota de afiliación al equipo que te incluye una playera del equipo y descuentos como miembro del equipo',
-          precio: '$400',
-          precioType: 'anual',
-          precioSq: ''
-        },
-        {
-          concepto: 'Plan de Entrenamiento de 1 disciplina',
-          descripcion: 'Entrenamientos en la plataforma de Trainning Peaks para Natación, Ciclismo o Carrera',
-          precio: '$400',
-          precioType: 'p/mes',
-          precioSq: ''
-        },
-        {
-          concepto: 'Plan de Entrenamiento de Triatlon o 2 disciplinas',
-          descripcion: 'Entrenamientos en la plataforma de Trainning Peaks para Natación, Ciclismo y Carrera',
-          precio: '$600',
-          precioType: 'p/mes',
-          precioSq: ''
-        },
-        {
-          concepto: 'Plan de Entrenamiento Personalizado de 1 disciplina',
-          descripcion: 'Entrenamientos en la plataforma de Trainning Peaks para Natación, Ciclismo o Carrera',
-          precio: '$800',
-          precioType: 'p/mes',
-          precioSq: ''
-        },
-        {
-          concepto: 'Plan de Entrenamiento de Triatlon o 2 disciplinas',
-          descripcion: 'Entrenamientos en la plataforma de Trainning Peaks para Natación, Ciclismo y Carrera',
-          precio: '$1,200',
-          precioType: 'p/mes',
-          precioSq: ''
-        },
-        {
-          concepto: 'Video Análisis de Técnica de Natación',
-          descripcion: 'Grabación sub acuática de tu técnica de natación, detección de errores y ejercicios de corrección',
-          precio: '$500',
-          precioType: '',
-          precioSq: '$250'
-        },
-        {
-          concepto: 'Video Análisis de Técnica de Carrera',
-          descripcion: 'Grabación de tu técnica de carrera, detección de errores y ejercicios de corrección',
-          precio: '$500',
-          precioType: '',
-          precioSq: '$250'
-        },
-        {
-          concepto: 'Prueba de FTP en ciclismo',
-          descripcion: 'Prueba para indentificar tu umbral de potencia en ciclismo.',
-          precio: '$500',
-          precioType: '',
-          precioSq: '$250'
-        },
-        {
-          concepto: 'Prueba de esfuerzo en banda para zonas de entrenamiento',
-          descripcion: '',
-          precio: '',
-          precioType: '',
-          precioSq: ''
-        },
-        {
-          concepto: 'Pruebas de campo para medir umbrales de lactato',
-          descripcion: '',
-          precio: '',
-          precioType: '',
-          precioSq: ''
-        }
-      ]
+  props: {
+    items: {
+      type: Array,
+      default: () => []
     }
   }
 }
